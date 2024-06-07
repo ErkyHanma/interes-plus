@@ -26,6 +26,18 @@ export const calcularInteresCompuesto = ({
     case "anualmente":
       numeroCompuestosAnuales = 1;
       break;
+    case "bimestralmente":
+      numeroCompuestosAnuales = 6;
+      break;
+    case "trimestralmente":
+      numeroCompuestosAnuales = 4;
+      break;
+    case "cuatrimestralmente":
+      numeroCompuestosAnuales = 3;
+      break;
+    case "semestralmente":
+      numeroCompuestosAnuales = 2;
+      break;
     case "mensualmente":
       numeroCompuestosAnuales = 12;
       break;

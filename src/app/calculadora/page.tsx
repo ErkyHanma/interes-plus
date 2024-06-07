@@ -11,7 +11,7 @@ const Calculadora = () => {
   const [formData, setFormData] = useState({
     DepósitoInicial: 100,
     TasaDeInterésAnual: 3,
-    AñosAInvertir: 1,
+    AñosAInvertir: 3,
     FrecuenciaAnualDeInterés: "anualmente",
     AportacionesAdicionales: 10,
   });
@@ -26,9 +26,6 @@ const Calculadora = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    console.log(formData);
-  };
 
   return (
     <div className="flex-col h-full">
@@ -38,7 +35,7 @@ const Calculadora = () => {
         Calculadora de Intereses
       </div>
 
-      <section className="flex md:flex-row flex-col mt-8">
+      <section className="flex md:flex-row flex-col mt-6">
         <div className="flex flex-1 flex-col md:flex-row gap-4 md:mx-24 md:mt-8">
           <div className="flex flex-col w-[400px] mr-16 gap-2 mx-4">
             {inputValues.map((item) => (
@@ -75,6 +72,10 @@ const Calculadora = () => {
                       onChange={handleOnChange}
                     >
                       <option value="anualmente">Anualmente</option>
+                      <option value="bimestralmente">Bimestralmente</option>
+                      <option value="trimestralmente">Trimestralmente </option>
+                      <option value="cuatrimestralmente">Cuatrimestralmente </option>
+                      <option value="semestralmente">Semestralmente</option>
                       <option value="mensualmente">Mensualmente</option>
                       <option value="quincenalmente">Quincenalmente</option>
                       <option value="semanalmente">Semanalmente</option>

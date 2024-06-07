@@ -31,6 +31,14 @@ const BarChart = ({ data }: BarData) => {
     data.AportacionesAdicionales *
     (data.FrecuenciaAnualDeInterés === "anualmente"
       ? 1
+      : data.FrecuenciaAnualDeInterés === "bimestralmente"
+      ? 6
+      : data.FrecuenciaAnualDeInterés === "trimestralmente"
+      ? 4
+      : data.FrecuenciaAnualDeInterés === "cuatrimestralmente"
+      ? 3
+      : data.FrecuenciaAnualDeInterés === "semestralmente"
+      ? 2
       : data.FrecuenciaAnualDeInterés === "mensualmente"
       ? 12
       : data.FrecuenciaAnualDeInterés === "quincenalmente"
