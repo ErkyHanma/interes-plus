@@ -13,7 +13,7 @@ const Calculadora = () => {
     TasaDeInterésAnual: 3,
     AñosAInvertir: 3,
     FrecuenciaAnualDeInterés: "anualmente",
-    AportacionesAdicionales: 10,
+    AportacionesAdicionales: 100,
   });
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
