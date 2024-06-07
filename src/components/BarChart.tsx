@@ -6,6 +6,7 @@ import ToolTip from "./Tooltip";
 import { years } from "@/lib/Chart.JS/Utils";
 import { BarData } from "@/types";
 import { calcularInteresCompuesto } from "@/lib/utils";
+import ChartResult from "./ChartResult";
 
 const BarChart = ({ data }: BarData) => {
   const [interesFinal, setInteresFinal] = useState(0);
@@ -67,8 +68,8 @@ const BarChart = ({ data }: BarData) => {
   const chartLabel = years({ count: data.AñosAInvertir });
 
   return (
-    <div className="">
-      <div className="flex gap-2 items-center">
+    <div className="border py-6 -mt-4 px-4 shadow-md rounded-md">
+      <div className="flex gap-2 items-center -mb-6">
         <span className="font-semibold">Calculadora de interés Compuesto</span>
         <ToolTip description="Interés compuesto es el interés generado sobre los intereses al reinvertirlos. Esta calculadora asume que cada año tus ganancias serán reinvertidas y no se hará ningún retiro." />
       </div>
@@ -82,16 +83,16 @@ const BarChart = ({ data }: BarData) => {
               {
                 label: "Depósito Inicial",
                 data: chartLabel.map(() => data.DepósitoInicial),
-                backgroundColor: "rgba(43, 63, 229, 0.8)",
-                borderRadius: 5,
+                backgroundColor: "#006eab",
+                borderRadius: 2,
               },
               {
                 label: "Depósitos adicionales acumulados",
                 data: chartLabel.map(
                   (_, index) => aportacionesTotales * (index + 1)
                 ),
-                backgroundColor: "rgba(250, 192, 19, 0.8)",
-                borderRadius: 5,
+                backgroundColor: "#05B4FF",
+                borderRadius: 2,
               },
               {
                 label: "Interés acumulado",
@@ -108,21 +109,22 @@ const BarChart = ({ data }: BarData) => {
                     aportacionesTotales * (index + 1)
                   ).toFixed(2)
                 ),
-                backgroundColor: "rgba(253, 135, 135, 0.8)",
-                borderRadius: 5,
+                backgroundColor: "#75d7ff",
+                borderRadius: 2,
               },
             ],
           }}
         />
       </div>
-      <div>
-        <p>Deposito Inicial: {data.DepósitoInicial + ".00"}</p>
-        <p>
-          Depósitos Adicionales Acumulados:{"  "}
-          {(aportacionesTotales * data.AñosAInvertir).toFixed(2)}
-        </p>
-        <p>Interés Acumulado: {interesFinal.toFixed(2)}</p>
-        <p>Total: {capitalFinal.toFixed(2)}</p>
+      <div className="flex-col flex px-4">
+        <h1 className="font-bold my-2">Resultados</h1>
+        <ChartResult
+          DepósitoInicial={data.DepósitoInicial}
+          interesFinal={interesFinal}
+          capitalFinal={capitalFinal}
+          aportacionesTotales={aportacionesTotales}
+          AñosAInvertir={data.AñosAInvertir}
+        />
       </div>
     </div>
   );

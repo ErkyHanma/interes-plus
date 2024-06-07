@@ -1,4 +1,5 @@
 import { karla, montserrat, rubik } from "@/components/ui/fonts";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
