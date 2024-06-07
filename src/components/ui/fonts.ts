@@ -1,0 +1,71 @@
+import {
+  Inter,
+  Lusitana,
+  Signika_Negative,
+  Noto_Sans_Display,
+  Rubik,
+  Sanchez,
+  Rokkitt,
+  Merriweather,
+  Montserrat,
+  Karla,
+  Josefin_Sans,
+  Cabin,
+} from "next/font/google";
+
+export const inter = Inter({ subsets: ["latin"] });
+
+export const lusitana = Lusitana({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
+
+export const signika_Negative = Signika_Negative({
+  weight: ["400", "700", "600"],
+  subsets: ["latin"],
+});
+
+export const sanchez = Sanchez({
+  weight: ["400"],
+  subsets: ["latin"],
+});
+
+export const rokkitt = Rokkitt({
+  weight: ["400", "500", "700", "600"],
+  subsets: ["latin"],
+});
+
+export const merriweather = Merriweather({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
+
+export const montserrat = Montserrat({
+  weight: ["400", "500", "700", "600"],
+  subsets: ["latin"],
+});
+
+export const karla = Karla({
+  weight: ["400", "500", "700", "600"],
+  subsets: ["latin"],
+});
+
+export const josefin_Sans = Josefin_Sans({
+  weight: ["400", "500", "700", "600"],
+  subsets: ["latin"],
+});
+
+export const cabin = Cabin({
+  weight: ["400", "500", "700", "600"],
+  subsets: ["latin"],
+});
+
+export const noto_Sans_Display = Noto_Sans_Display({
+  weight: ["400", "500", "700", "600"],
+  subsets: ["latin"],
+});
+
+export const rubik = Rubik({
+  weight: ["400", "500", "700", "600"],
+  subsets: ["latin"],
+});
