@@ -13,7 +13,7 @@ export default function Home() {
           <p
             className={`text-6xl md:text-7xl ${montserrat.className} font-bold`}
           >
-            Calcula y visualiza tus inversiones.
+            Calcula y visualiza 
           </p>
           <p
             className={` text-gray-500 text-lg md:w-[600px]  md:text-xl font-medium mt-6 md:mt-5  ${karla.className}`}
