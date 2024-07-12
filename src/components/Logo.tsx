@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { rubik } from "./ui/fonts";
+import { rubik } from "../lib/fonts";
 
 const Logo = () => {
   return (

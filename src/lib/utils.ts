@@ -5,6 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+// Funcion para calcular el monto final de una inversion con interes compuesto + aportaciones adicionales
 export const calcularInteresCompuesto = ({
   capitalInicial,
   tasaInteresAnual,
@@ -37,6 +38,9 @@ export const calcularInteresCompuesto = ({
       break;
     case "cuatrimestralmente":
       numeroCompuestosAnuales = 3;
+      break;
+    case "mensualmente":
+      numeroCompuestosAnuales = 12;
       break;
     case "quincenalmente":
       numeroCompuestosAnuales = 24;
@@ -74,6 +78,7 @@ export const calcularInteresCompuesto = ({
   return montoAcumulado;
 };
 
+// Funcion para calcular el monto final de una inversion con interes simple + aportaciones adicionales
 export const calcularInteresSimple = ({
   capitalInicial,
   tasaInteresAnual,
@@ -107,6 +112,9 @@ export const calcularInteresSimple = ({
     case "cuatrimestralmente":
       numeroCompuestosAnuales = 3;
       break;
+    case "mensualmente":
+      numeroCompuestosAnuales = 12;
+      break;
     case "quincenalmente":
       numeroCompuestosAnuales = 24;
       break;
@@ -127,45 +135,11 @@ export const calcularInteresSimple = ({
   const montoAcumulado =
     InteresSimpleTotal +
     parseFloat(capitalInicial) +
-    parseFloat(AportacionesAdicionales === "" ? 0.00 : AportacionesAdicionales);
+    parseFloat(AportacionesAdicionales === "" ? 0.0 : AportacionesAdicionales);
 
   return montoAcumulado;
 };
 
-// export const calcularInteresSimple = ({
-//   capitalInicial,
-//   tasaInteresAnual,
-//   FrecuenciaAnualDeInterés,
-//   años,
-//   AportacionesAdicionales,
-// }: {
-//   capitalInicial: number;
-//   tasaInteresAnual: number;
-//   FrecuenciaAnualDeInterés: string;
-//   años: number;
-//   AportacionesAdicionales: number;
-// }) => {
-//   const tasaInteresDecimal = tasaInteresAnual / 100;
-
-//   // Calcular interés sobre el capital inicial
-
-//   // Determinar la frecuencia de las aportaciones
-//   let numeroAportacionesAnuales;
-
-//   switch (FrecuenciaAnualDeInterés) {
-//     case "anualmente":
-//       numeroAportacionesAnuales = 1;
-//       break;
-//     case "mensualmente":
-//       numeroAportacionesAnuales = 12;
-//       break;
-//     case "quincenalmente":
-//       numeroAportacionesAnuales = 24;
-//       break;
-//     case "semanalmente":
-//       numeroAportacionesAnuales = 52;
-//       break;
-//     default:
-//       throw new Error("Frecuencia de aportaciones no válida");
-//   }
-// };
+export function numberWithCommas(x: number | string) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

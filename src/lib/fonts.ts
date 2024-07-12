@@ -11,6 +11,8 @@ import {
   Karla,
   Josefin_Sans,
   Cabin,
+  Roboto_Mono,
+  Flow_Circular,
 } from "next/font/google";
 
 export const inter = Inter({ subsets: ["latin"] });
@@ -67,5 +69,15 @@ export const noto_Sans_Display = Noto_Sans_Display({
 
 export const rubik = Rubik({
   weight: ["400", "500", "700", "600"],
+  subsets: ["latin"],
+});
+
+export const roboto_Mono = Roboto_Mono({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+
+export const flow_Circular = Flow_Circular({
+  weight: ["400"],
   subsets: ["latin"],
 });

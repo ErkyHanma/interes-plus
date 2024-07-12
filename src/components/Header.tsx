@@ -3,16 +3,16 @@
 import Link from "next/link";
 import Menu from "./Menu";
 import Logo from "./Logo";
-import { headers_links } from "@/constants/links";
+import { headers_links } from "@/constants/index";
 import { useModal } from "@/hooks/useModal";
-import { rubik } from "./ui/fonts";
+import { rubik } from "../lib/fonts";
 
 const Header = () => {
   const { isOpen } = useModal();
 
   return (
     <>
-    <div className="flex bg-white flex-1 z-50 sticky top-0 py-5 px-6 items-center justify-between border-gray-200 border-b-2  md:border-none">
+      <div className="flex shadowHeader bg-white flex-1 z-50 sticky top-0 py-5 px-6 items-center justify-between border-gray-200 border-b-2  md:border-none">
         <Link href={"/home"} className="flex items-center ">
           <Logo />
         </Link>
@@ -29,6 +29,8 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+
+            <div className="bg-gray-300 w-[1.5px] h-7 self-center rounded-md "></div>
 
             <Link
               className="font-bold mr-4 ml-6 py-2 px-5 rounded-md  text-white bg-[#ec600a]"

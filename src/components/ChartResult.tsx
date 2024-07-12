@@ -1,3 +1,4 @@
+import { numberWithCommas } from "@/lib/utils";
 import Image from "next/image";
 
 const ChartResult = ({
@@ -13,18 +14,11 @@ const ChartResult = ({
   AñosAInvertir: number;
   interesFinal: number;
 }) => {
-  console.log(
-    DepósitoInicial,
-    capitalFinal,
-    aportacionesTotales,
-    AñosAInvertir,
-    interesFinal
-  );
 
 
   const safeDepositoInicial = isNaN(DepósitoInicial)
-  ? (0).toFixed(2)
-  : DepósitoInicial.toFixed(2);
+    ? (0).toFixed(2)
+    : DepósitoInicial.toFixed(2);
   const safeCapitalFinal = isNaN(capitalFinal)
     ? (0).toFixed(2)
     : capitalFinal.toFixed(2);
@@ -47,7 +41,7 @@ const ChartResult = ({
         </div>
 
         <p className="font-bold flex text-2xl rounded-b-md w-full h-[70px] bg-[#006eab] items-center justify-center">
-          {safeDepositoInicial}
+          {numberWithCommas(safeDepositoInicial)}
         </p>
       </div>
       <div className="flex border shadowClass rounded-md gap-8  mb-2 border-gray-300 flex-col  items-center flex-1  h-full ">
@@ -65,7 +59,7 @@ const ChartResult = ({
         </div>
 
         <p className="font-bold flex rounded-b-md text-2xl rounded-md w-full h-[70px] bg-[#05B4FF] items-center justify-center">
-          $ {(aportacionesTotales * AñosAInvertir).toFixed(2)}
+          $ {numberWithCommas((aportacionesTotales * AñosAInvertir).toFixed(2))}
         </p>
       </div>
       <div className="flex border shadowClass rounded-md gap-8  mb-2 border-gray-300 flex-col  items-center flex-1  h-full ">
@@ -81,7 +75,7 @@ const ChartResult = ({
         </div>
 
         <p className="font-bold flex rounded-b-md text-2xl w-full h-[70px] bg-[#75d7ff] items-center justify-center">
-          $ {safeInteresFinal}
+          $ {numberWithCommas(safeInteresFinal)}
         </p>
       </div>
       <div className="flex border shadowClass rounded-md gap-8 mb-2 border-gray-300 flex-col  items-center flex-1 h-full  ">
@@ -97,7 +91,7 @@ const ChartResult = ({
         </div>
 
         <p className="font-bold flex  rounded-b-md text-2xl w-full h-[70px] bg-green-300 items-center justify-center">
-          $ {safeCapitalFinal}
+          $ {numberWithCommas(safeCapitalFinal)}
         </p>
       </div>
     </div>

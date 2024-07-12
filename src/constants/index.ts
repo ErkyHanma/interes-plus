@@ -84,3 +84,44 @@ export const ChartData = [
     label: "Interes acomulado",
   },
 ];
+
+export const homeInfo = [
+  {
+    icon: "/icon/tools.svg",
+    titulo: "Herramienta Interactiva",
+    informacion:
+      "Interes-Plus ofrece una herramienta interactiva para calcular el interés simple y compuesto, ayudándole a comprender y gestionar el crecimiento de sus inversiones.",
+    link: "/calculadora",
+  },
+
+  {
+    icon: "/icon/graduation-cap.svg",
+    titulo: "Recursos Educativos",
+    informacion:
+      "Interes-Plus proporciona recursos educativos y artículos sobre finanzas, ayudándole a navegar por el mundo financiero con confianza y conocimiento.",
+    link: "/info",
+  },
+
+  {
+    icon: "/icon/id-card-clip-alt.svg",
+    titulo: "Sobre Nosotros",
+    informacion:
+      "Conozca más sobre la misión y el equipo detrás de Interes-Plus, dedicados a ofrecer herramientas y recursos para su educación financiera.",
+    link: "/about",
+  },
+];
+
+export const aboutInfo = [
+  {
+    title: " ¿Quiénes somos?",
+    info: "Somos Interes-Plus, una plataforma dedicada a proporcionar herramientas y recursos educativos para la gestión financiera personal. Nuestro equipo está compuesto por apasionados a tecnología, dispuestos a seguir aprendiendo y mejorando cada dia.",
+  },
+  {
+    title: "¿Qué hacemos?",
+    info: " En Interes-Plus, ofrecemos calculadoras interactivas para el cálculo de interés simple y compuesto, así como recursos educativos que ayudan a nuestros usuarios a comprender mejor sus finanzas. Nuestra misión es facilitar la toma de decisiones financieras informadas y efectivas.",
+  },
+  {
+    title: "¿En qué creemos?",
+    info: "  Creemos en la importancia de la educación financiera para alcanzar la libertad económica. Nos guiamos por valores como la integridad, la transparencia, y la accesibilidad, y nos esforzamos por hacer que la gestión financiera sea comprensible y accesible para todos.",
+  },
+];

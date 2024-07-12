@@ -1,13 +1,11 @@
 "use client";
 
-import { inter, montserrat } from "@/components/ui/fonts";
-import { inputValues } from "@/constants/links";
+import { inter, montserrat } from "@/lib/fonts";
+import { inputValues } from "@/constants/index";
 import { ChangeEvent, useState } from "react";
-import Image from "next/image";
 import BarChart from "@/components/BarChart";
-import ToolTip from "@/components/Tooltip";
 import CompoundInterestForm from "@/components/forms/CompoundInterestForm";
-import Link from "next/link";
+import clsx from "clsx";
 
 const Calculadora = () => {
   const [formData, setFormData] = useState({
@@ -32,10 +30,9 @@ const Calculadora = () => {
     });
   };
 
-  const handleInterestTypeChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    setInterestType(event.target.value);
+  const handleInterestTypeChange = (event: MouseEvent<HTMLButtonElement>) => {
+    const { value } = event.currentTarget;
+    setInterestType(value);
   };
 
   return (
@@ -48,36 +45,29 @@ const Calculadora = () => {
 
       <section className="flex md:flex-row flex-col mt-8">
         <div className="flex flex-1 flex-col md:flex-row gap-4 md:mx-20 md:mt-8">
-          <div className="border py-6 -mt-4 px-4 flex flex-col shadow-md rounded-md">
-            <div className="flex gap-24 justify-center mb-4">
-              <label className="">
-                <input
-                  className="m-2"
-                  type="radio"
-                  name="interestType"
-                  value="simple"
-                  checked={interestType === "simple"}
-                  onChange={handleInterestTypeChange}
-                />
-                Interes simple
-              </label>
-
-              <div className="gap-2 flex items-center">
-                <label className="">
-                  <input
-                    className="m-2"
-                    type="radio"
-                    name="interestType"
-                    value="compound"
-                    checked={interestType === "compound"}
-                    onChange={handleInterestTypeChange}
-                  />
-                  Interes Compuesto
-                </label>
-              </div>
+          <div className="border py-6 -mt-4 px-4 flex flex-col h-[550px] shadow-md rounded-md">
+            <div className="flex gap-2 justify-between mb-4  rounded-md mx- p-2">
+              <button
+                className={clsx("font-semibold  p-2 flex-1  rounded-md", {
+                  "bg-orange-500 text-white": interestType === "simple",
+                })}
+                value={"simple"}
+                onClick={handleInterestTypeChange}
+              >
+                Interes SImple
+              </button>
+              <button
+                className={clsx("font-semibold  p-2 flex-1 rounded-md", {
+                  "bg-orange-500 text-white": interestType === "compuesto",
+                })}
+                value={"compuesto"}
+                onClick={handleInterestTypeChange}
+              >
+                Interes Compuesto
+              </button>
             </div>
 
-            <form className="flex flex-col w-[380px]  mr-14 gap-2 mx-4">
+            <form className="flex flex-col h-80 w-[380px]  mr-14 gap-2 mx-4">
               <CompoundInterestForm
                 inputValues={inputValues}
                 formData={formData}

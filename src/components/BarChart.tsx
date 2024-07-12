@@ -15,8 +15,8 @@ const BarChart = ({
   data: BarData;
   interestType: any;
 }) => {
-  const [interesSimpleFinal, setInteresSimpleFinal] = useState(0);
-  const [interesCompuestoFinal, setInteresCompuestoFinal] = useState(0);
+  const [interesCompuestoAcomulado, setInteresCompuestoAcomulado] = useState(0);
+  const [interesSimpleAcomulado, setInteresSimpleAcomulado] = useState(0);
 
   defaults.maintainAspectRatio = false;
   defaults.responsive = true;
@@ -25,7 +25,7 @@ const BarChart = ({
   defaults.plugins.title.color = "black";
   defaults.plugins.legend.maxHeight = 1000;
 
-  // Monto final de la inversion
+  // Monto final de la inversion con interes compuesto
   const InteresCompuestoCapitalFinal = calcularInteresCompuesto({
     capitalInicial: data.DepósitoInicial,
     tasaInteresAnual: data.TasaDeInterésAnual,
@@ -34,6 +34,7 @@ const BarChart = ({
     AportacionesAdicionales: data.AportacionesAdicionales,
   });
 
+  // Monto final de la inversion con interes simple
   const InteresSimpleCapitalFinal = calcularInteresSimple({
     capitalInicial: data.DepósitoInicial,
     tasaInteresAnual: data.TasaDeInterésAnual,
@@ -63,22 +64,32 @@ const BarChart = ({
       ? 52
       : 365);
 
+  // console.log(
+  //   InteresCompuestoCapitalFinal,
+  //   data.DepósitoInicial,
+  //   aportacionesTotales
+  // );
+
   useEffect(() => {
     const totalInteresCompuesto =
       InteresCompuestoCapitalFinal -
       data.DepósitoInicial -
       aportacionesTotales * data.AñosAInvertir;
 
-    const totalInteresSimple = InteresSimpleCapitalFinal - data.DepósitoInicial;
+    const totalInteresSimple =
+      InteresSimpleCapitalFinal - data.DepósitoInicial - aportacionesTotales;
 
-    setInteresCompuestoFinal(totalInteresCompuesto);
-    setInteresSimpleFinal(totalInteresSimple);
+    setInteresCompuestoAcomulado(totalInteresCompuesto);
+    setInteresSimpleAcomulado(totalInteresSimple);
   }, [
     data,
     InteresCompuestoCapitalFinal,
     InteresSimpleCapitalFinal,
     aportacionesTotales,
   ]);
+
+  console.log(interesCompuestoAcomulado);
+  //console.log(interesSimpleAcomulado);
 
   const options = {
     plugins: {},
@@ -170,8 +181,8 @@ const BarChart = ({
           DepósitoInicial={parseFloat(data.DepósitoInicial)}
           interesFinal={
             interestType === "simple"
-              ? interesSimpleFinal
-              : interesCompuestoFinal
+              ? interesSimpleAcomulado
+              : interesCompuestoAcomulado
           }
           capitalFinal={
             interestType === "simple"
