@@ -20,8 +20,10 @@ export default function RootLayout({
       <body className={`${inter.className} h-screen w-screen`}>
         <Header />
 
-        <div className="h-[90%] w-full">{children}</div>
+        <div className="h-[90%] pt-24 w-full">{children}</div>
       </body>
+
+      
     </html>
   );
 }

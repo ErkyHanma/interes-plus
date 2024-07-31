@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex shadowHeader bg-white flex-1 z-50 sticky top-0 py-5 px-6 items-center justify-between border-gray-200 border-b-2  md:border-none">
+      <div className="flex shadowHeader bg-white  z-50 fixed w-full top-0 py-3.5 px-6 items-center justify-between border-gray-200 border-b-2  md:border-none">
         <Link href={"/home"} className="flex items-center ">
           <Logo />
         </Link>

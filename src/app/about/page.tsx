@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import LogoBlack from "@/components/LogoBlack";
 import { aboutInfo } from "@/constants";
 import { montserrat, karla, roboto_Mono, flow_Circular } from "@/lib/fonts";
@@ -6,15 +7,17 @@ import Link from "next/link";
 
 const about = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex  flex-col">
       <section
         className={`${montserrat.className} flex  gap-3 px-36 justify-center h-[90vh] items-center`}
       >
         <div className="flex flex-col flex-1 gap-6">
           <p className="font-bold text-5xl w-[32rem]">
-          Cambiando la forma en la que visualizas tus inversiones
+            Cambiando la forma en la que visualizas tus inversiones
           </p>
-          <div className={`${flow_Circular.className} -mt-6 pl-1 text-[#ec600a]`}>
+          <div
+            className={`${flow_Circular.className} -mt-6 pl-1 text-[#ec600a]`}
+          >
             ........... .....
           </div>
           <p className="text-md -mt-4  w-[28rem] font-medium">
@@ -27,7 +30,7 @@ const about = () => {
         </div>
         <div className="flex-1 ml-20">
           <Image
-            src={"/icon/undraw_data_re_80ws (1).svg"}
+            src={"/images/undraw_data_re_80ws (1).svg"}
             alt="icon"
             width={500}
             height={20}
@@ -79,64 +82,60 @@ const about = () => {
         </div>
       </section>
 
-      <footer className="bg flex flex-col flex-1 bg-orange-400">
-        <div className="flex h-[260px] mx-12 mt-36 pl-24 pr-32 pt-34 pt-20 justify-center gap-32">
-          <div className="flex w-52 flex-col  gap-3">
-            <Link href={"/home"} className="flex items-center -mt-2">
-              <LogoBlack />
-            </Link>
-            <p className={`font-semibold text-md ${karla.className}`}>
-              Estamos aqui para facilitarte tu investigacion
-            </p>
-          </div>
-          <div className={` flex   flex-col ${karla.className} `}>
-            <p className={`font-bold text-black text-xl `}>Servicios</p>
-            <Link className="font-medium text-gray-600" href={"/calculadora"}>
-              Calculadora
-            </Link>
-          </div>
-
-          <div className={` flex   flex-col ${karla.className} `}>
-            <p className={`font-bold text-black text-xl `}>Quienes somos</p>
-            <Link className="font-medium text-gray-600" href={"/about"}>
-              About us
-            </Link>
-            <Link className="font-medium text-gray-600" href={"/contact"}>
-              Contactanos
-            </Link>
-          </div>
-
-          <div className={` flex   flex-col ${karla.className} `}>
-            <p className={`font-bold text-black text-xl `}>Mas</p>
-            <Link className="font-medium text-gray-600" href={"/about"}>
-              Aprende
-            </Link>
-          </div>
+      <section className="h-[600px] py-16 px-28 flex w-full ">
+        <div className="flex flex-1 mr-">
+          <Image
+            src={"/images/undraw_my_personal_files_re_3q0p.svg"}
+            alt="icon"
+            width={500}
+            height={20}
+          />
         </div>
-        <div className="flex h-[200px] justify-center  mr-44 ml-40 border-t-4  border-gray-600">
-          <div className="flex gap-3">
-            <Image src={"/icon/github.svg"} alt="icon" width={32} height={20} />
-            <Image
-              src={"/icon/linkedin.svg"}
-              alt="icon"
-              width={32}
-              height={20}
-            />
-            <Image
-              src={"/icon/instagram.svg"}
-              alt="icon"
-              width={32}
-              height={20}
-            />
-            <Image
-              src={"/icon/twitter-alt-square.svg"}
-              alt="icon"
-              width={32}
-              height={20}
-            />
-          </div>
+        <div className={`${montserrat.className} flex flex-col flex-1 gap-8`}>
+          <p className="font-bold  text-4xl">Nuestra Historia</p>
+          <p className="gap-2 flex flex-col">
+            <span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+              molestias delectus laborum exercitationem quos molestiae odit
+              laboriosam reprehenderit asperiores repudiandae ipsum quia natus
+              quisquam in architecto veniam, tenetur doloribus aspernatur!
+            </span>
+            <span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+              molestias delectus laborum exercitationem quos molestiae odit
+              laboriosam reprehenderit asperiores repudiandae ipsum quia natus
+              quisquam in architecto veniam, tenetur doloribus aspernatur!
+            </span>
+
+            <span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+              molestias delectus laborum exercitationem quos molestiae odit
+              laboriosam reprehenderit asperiores repudiandae ipsum quia natus
+              quisquam in architecto veniam, tenetur doloribus aspernatur!
+            </span>
+          </p>
         </div>
-      </footer>
+      </section>
+
+      <section className="w-full my-36 flex items-center justify-center">
+        <div className="flex flex-col items-center text-center md:w-[950px] ">
+          <p
+            className={`text-6xl md:text-4xl  ${montserrat.className} font-bold`}
+          >
+            Creado por entusiastas de la tecnología, no lo dudes y únete a
+            nosotros.
+          </p>
+
+          <Link
+            className="font-bold mt-12 py-4 px-8 rounded-full text-xl  text-white bg-[#ec600a]"
+            href={"/calculadora"}
+          >
+            Empezar
+          </Link>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
