@@ -1,5 +1,5 @@
 import colorLib from "@kurkle/color";
-import DateTime from "luxon";
+import { DateTime } from "luxon"; // Use named import
 import "chartjs-adapter-luxon";
 import { valueOrDefault } from "chart.js/helpers";
 

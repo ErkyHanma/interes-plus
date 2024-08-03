@@ -82,7 +82,7 @@ const about = () => {
         </div>
       </section>
 
-      <section className="h-[600px] py-16 px-28 flex w-full ">
+      <section className="h-full py-24 items-center justify-center px-28 flex w-full ">
         <div className="flex flex-1 mr-">
           <Image
             src={"/images/undraw_my_personal_files_re_3q0p.svg"}
@@ -95,23 +95,32 @@ const about = () => {
           <p className="font-bold  text-4xl">Nuestra Historia</p>
           <p className="gap-2 flex flex-col">
             <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              molestias delectus laborum exercitationem quos molestiae odit
-              laboriosam reprehenderit asperiores repudiandae ipsum quia natus
-              quisquam in architecto veniam, tenetur doloribus aspernatur!
+              Este proyecto fue creado como parte de un proyecto universitario
+              en la materia de Precálculo, encargado por el Lcdo. Luis David
+              Mercedes. En esta asignación, se nos pidió representar un tema
+              matemático a través de un proyecto que resolviera una problemática
+              o ayudara de algún modo a la sociedad. Motivados por este reto,
+              nuestro equipo decidió abordar el tema de las funciones
+              exponenciales a través de los intereses financieros.
             </span>
             <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              molestias delectus laborum exercitationem quos molestiae odit
-              laboriosam reprehenderit asperiores repudiandae ipsum quia natus
-              quisquam in architecto veniam, tenetur doloribus aspernatur!
+              Con la idea inicial en mente, nos pusimos manos a la obra y
+              desarrollamos una representación de las funciones exponenciales
+              aplicada al cálculo de intereses. Nuestro objetivo era demostrar
+              cómo estas funciones matemáticas pueden ser útiles en la vida
+              cotidiana, especialmente en el ámbito financiero.
             </span>
 
             <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              molestias delectus laborum exercitationem quos molestiae odit
-              laboriosam reprehenderit asperiores repudiandae ipsum quia natus
-              quisquam in architecto veniam, tenetur doloribus aspernatur!
+              Además, surgió la idea de expandir el proyecto y crear una
+              plataforma más completa que ofreciera una amplia gama de
+              información sobre matemática financiera. Queríamos que los
+              usuarios tuvieran acceso a recursos y herramientas que les
+              facilitaran la comprensión de conceptos financieros y la toma de
+              decisiones informadas. De este modo, nuestra plataforma no solo
+              resuelve un problema académico, sino que también tiene el
+              potencial de beneficiar a la sociedad en general, proporcionando
+              un recurso valioso para la educación financiera.
             </span>
           </p>
         </div>

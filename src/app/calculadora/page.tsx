@@ -9,9 +9,9 @@ import clsx from "clsx";
 
 const Calculadora = () => {
   const [formData, setFormData] = useState({
-    DepósitoInicial: 100,
-    TasaDeInterésAnual: 3,
-    AñosAInvertir: 4,
+    DepósitoInicial: 10000,
+    TasaDeInterésAnual: 5,
+    AñosAInvertir: 5,
     FrecuenciaAnualDeInterés: "anualmente",
     AportacionesAdicionales: 0,
   });
