@@ -2,7 +2,7 @@
 
 import { inter, montserrat } from "@/lib/fonts";
 import { inputValues } from "@/constants/index";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, MouseEvent as ReactMouseEvent } from "react";
 import BarChart from "@/components/BarChart";
 import CompoundInterestForm from "@/components/forms/CompoundInterestForm";
 import clsx from "clsx";
@@ -30,7 +30,7 @@ const Calculadora = () => {
     });
   };
 
-  const handleInterestTypeChange = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleInterestTypeChange = (event: ReactMouseEvent<HTMLButtonElement>) => {
     const { value } = event.currentTarget;
     setInterestType(value);
   };
