@@ -19,7 +19,7 @@ const Header = () => {
         <div className="flex flex-col items-baseline gap-1">
           <Menu />
 
-          <div className="gap-2 hidden md:flex">
+          <div className="gap-2 hidden headerResponse:flex">
             {headers_links.map((item) => (
               <Link
                 key={item.name}
@@ -43,7 +43,7 @@ const Header = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden flex-col py-5 px-6 gap-3 flex">
+        <div className="md:hidden flex-col py-5 mt-6 px-6 gap-3 flex">
           {headers_links.map((item) => (
             <Link
               href={item.href}

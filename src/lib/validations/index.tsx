@@ -8,3 +8,13 @@ export const CalculatorValidation = z.object({
   FrecuenciaAnualDeInterés: z.any(),
   AportacionesAdicionales: z.number(),
 });
+
+
+
+export const ContactFormSchema = z.object({
+  Name: z.string().min(2).max(50),
+  Email: z.string().min(2).max(50),
+  Description: z.string().max(200),
+
+})
+

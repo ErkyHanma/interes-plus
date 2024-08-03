@@ -14,8 +14,6 @@ const ChartResult = ({
   AñosAInvertir: number;
   interesFinal: number;
 }) => {
-
-
   const safeDepositoInicial = isNaN(DepósitoInicial)
     ? (0).toFixed(2)
     : DepósitoInicial.toFixed(2);
@@ -27,8 +25,8 @@ const ChartResult = ({
     : interesFinal.toFixed(2);
 
   return (
-    <div className="flex gap-2">
-      <div className="flex shadowClass hover:bg-gray-50 duration-300 border rounded-md gap-16  border-gray-300 flex-col  items-center flex-1 h-full  ">
+    <div className="grid-cols-2  md:flex gap-2 ">
+      <div className="flex shadowClass hover:bg-gray-50 my-4 duration-300 border rounded-md gap-16  border-gray-300 flex-col  items-center flex-1 h-full  ">
         <div className="flex-col px-2 gap-3 mt-3 flex items-center">
           <p className="font-bold text-lg text-center">Deposito Inicial</p>
           <Image
@@ -44,7 +42,8 @@ const ChartResult = ({
           {numberWithCommas(safeDepositoInicial)}
         </p>
       </div>
-      <div className="flex border shadowClass rounded-md gap-8  mb-2 border-gray-300 flex-col  items-center flex-1  h-full ">
+
+      <div className="flex border shadowClass rounded-md gap-8 my-4  mb-2 border-gray-300 flex-col  items-center flex-1  h-full ">
         <div className="flex-col px-2 gap-3 mb-[50px] mt-3 flex items-center">
           <p className="font-bold text-lg  text-center">
             Depósitos Adicionales Acumulados
@@ -62,7 +61,8 @@ const ChartResult = ({
           $ {numberWithCommas((aportacionesTotales * AñosAInvertir).toFixed(2))}
         </p>
       </div>
-      <div className="flex border shadowClass rounded-md gap-8  mb-2 border-gray-300 flex-col  items-center flex-1  h-full ">
+
+      <div className="flex border shadowClass rounded-md gap-8  my-4 mb-2 border-gray-300 flex-col  items-center flex-1  h-full ">
         <div className="flex-col px-2 gap-3 mb-[50px] mt-3 flex items-center">
           <p className="font-bold text-lg text-center">Interés Acumulado</p>
           <Image
@@ -78,7 +78,8 @@ const ChartResult = ({
           $ {numberWithCommas(safeInteresFinal)}
         </p>
       </div>
-      <div className="flex border shadowClass rounded-md gap-8 mb-2 border-gray-300 flex-col  items-center flex-1 h-full  ">
+
+      <div className="flex border shadowClass rounded-md gap-8 my-4 mb-2 border-gray-300 flex-col  items-center flex-1 h-full  ">
         <div className="flex-col px-2 gap-3 mb-[50px] mt-3 flex items-center">
           <p className="font-bold text-lg text-center">Total</p>
           <Image

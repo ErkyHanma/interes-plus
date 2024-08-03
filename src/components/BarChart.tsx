@@ -111,7 +111,7 @@ const BarChart = ({
   const chartLabel = years({ count: data.AñosAInvertir });
 
   return (
-    <div className="border py-6 -mt-4 px-4 shadow-md rounded-md">
+    <div className="border w-full py-6 -mt-4 px-4 shadow-md rounded-md">
       <div className="flex gap-2 items-center ">
         <span className="font-semibold">
           {interestType === "simple"

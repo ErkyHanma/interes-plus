@@ -31,7 +31,7 @@ const CompoundInterestForm: React.FC<FormFieldProps> = ({
   handleOnChange,
 }) => {
   return (
-    <div className="flex flex-col w-[380px] mr-14 gap-2 mx-4">
+    <div className="flex flex-col xl:w-full w-[90%] mr-14 gap-2 mx-4">
       {inputValues.map((item) => (
         <div key={item.id}>
           <div className="flex mb-1 mt-1 items-center gap-2">

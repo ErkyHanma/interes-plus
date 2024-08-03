@@ -142,3 +142,219 @@
 .black-svg {
   filter: invert(100%) brightness(0);
 }
+
+/* headerResponse means the limit when the menu burger apper and disapper*/
+
+@media (min-width: 800px) {
+  .headerResponse\:flex {
+      display: flex;
+  }
+}
+
+@media (max-width: 800px) {
+  .headerRespons\:flex {
+      display: flex;
+  }
+}
+
+
+/* Info Page Styles */
+
+.titulo {
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+.titulo h1 {
+  padding-top: 5px;
+  font-size: 55px;
+  color: white;
+}
+.titulo p {
+  color: wheat;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  font-size: 25px;
+}
+
+.EducacionFinanciera h2 {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 32px;
+  color: black;
+}
+
+.EducacionFinanciera p {
+  margin-bottom: 40px;
+  color: #555;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.EducacionFinanciera h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  margin-top: 80px;
+  color: black;
+}
+
+.interes h2 {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 32px;
+  color: black;
+}
+.interes p {
+  color: #555;
+  text-align: justify;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+
+.imagen_interes {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.interes_simple h5 {
+  font-size: 30px;
+  margin-top: 100px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  border-top: 10px solid black;
+  padding-top: 70px;
+  color: black;
+}
+.interes_simple p {
+  margin-bottom: 40px;
+  color: #555;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.formulasimple h5 {
+  font-size: 21px;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: black;
+}
+
+.formulasimple p {
+  margin-bottom: 40px;
+  color: #555;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.imagensimple {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.variablesi p {
+  margin-bottom: 35px;
+  color: #555;
+  text-align: justify;
+  font-size: 19px;
+}
+.variablesi h2 {
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: black;
+}
+
+.interescompuesto h5 {
+  font-size: 30px;
+  margin-top: 50px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  border-top: 10px solid black;
+  padding-top: 70px;
+  color: black;
+}
+.interescompuesto p {
+  margin-bottom: 40px;
+  color: #555;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.forcompuesto h5 {
+  font-size: 21px;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: black;
+}
+.forcompuesto p {
+  margin-bottom: 40px;
+  color: #555;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.imagencompuesta {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.variablescompuesta p {
+  margin-bottom: 40px;
+  color: #555;
+  text-align: justify;
+  font-size: 19px;
+}
+
+.diferencias h5 {
+  font-size: 25px;
+  margin-top: 70px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  border-top: 10px solid black;
+  padding-top: 70px;
+  color: black;
+}
+
+.diferencias p {
+  margin-bottom: 70px;
+  color: #555;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.subdiferencia h2,
+li {
+  margin-bottom: 20px;
+}
+
+.mejor h2 {
+  font-size: 25px;
+  margin-top: 70px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  border-top: 10px solid black;
+  padding-top: 70px;
+  color: black;
+}
+
+.mejor p {
+  margin-bottom: 50px;
+  color: #555;
+  text-align: justify;
+  font-size: 19px;
+}
+

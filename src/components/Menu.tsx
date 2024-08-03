@@ -21,7 +21,7 @@ const Menu = () => {
       ) : (
         <button className="duration-500" onClick={onOpen}>
           <Image
-            className="md:hidden"
+            className="headerRespons:flex hidden"
             src="\icon\menu-burger.svg"
             alt="Close icon"
             width={28}

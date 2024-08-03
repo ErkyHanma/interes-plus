@@ -36,7 +36,7 @@ const Calculadora = () => {
   };
 
   return (
-    <div className="flex-col h-full">
+    <div className="flex-col h-full -mt-12 md:-mt-0">
       <div
         className={`${montserrat.className} flex justify-center font-bold text-3xl md:text-4xl mt-16`}
       >
@@ -44,7 +44,7 @@ const Calculadora = () => {
       </div>
 
       <section className="flex md:flex-row flex-col mt-8">
-        <div className="flex flex-1 flex-col md:flex-row gap-4 md:mx-20 md:mt-8">
+        <div className="flex px-8 xl:px-0 flex-1 flex-col gap-10 xl:flex-row xl:gap-4 xl:mx-20 xl:mt-8">
           <div className="border py-6 -mt-4 px-4 flex flex-col h-[550px] shadow-md rounded-md">
             <div className="flex gap-2 justify-between mb-4  rounded-md mx- p-2">
               <button
@@ -67,7 +67,7 @@ const Calculadora = () => {
               </button>
             </div>
 
-            <form className="flex flex-col h-80 w-[380px]  mr-14 gap-2 mx-4">
+            <form className="flex flex-col h-80 w-full xl:w-[340px]  mr-14 gap-2 mx-4">
               <CompoundInterestForm
                 inputValues={inputValues}
                 formData={formData}
@@ -76,7 +76,7 @@ const Calculadora = () => {
             </form>
           </div>
 
-          <div className="flex-1 w-full">
+          <div className="w-full">
             <BarChart data={formData} interestType={interestType} />
           </div>
         </div>
