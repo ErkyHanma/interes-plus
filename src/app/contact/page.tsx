@@ -30,11 +30,10 @@ const Contact = () => {
       Description: "",
     },
   });
-
   const { reset, handleSubmit } = useForm();
 
   const [isSuccess, setIsSuccess] = useState(false);
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState('');
 
   // 2. Define a submit handler.
 
