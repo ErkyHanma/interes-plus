@@ -64,11 +64,6 @@ const BarChart = ({
       ? 52
       : 365);
 
-  // console.log(
-  //   InteresCompuestoCapitalFinal,
-  //   data.DepósitoInicial,
-  //   aportacionesTotales
-  // );
 
   useEffect(() => {
     const totalInteresCompuesto =
@@ -178,7 +173,7 @@ const BarChart = ({
       <div className="flex-col flex px-4">
         <h1 className="font-bold my-2">Resultados</h1>
         <ChartResult
-          DepósitoInicial={parseFloat(data.DepósitoInicial)}
+          DepósitoInicial={parseFloat(data.DepósitoInicial.toString())}
           interesFinal={
             interestType === "simple"
               ? interesSimpleAcomulado
