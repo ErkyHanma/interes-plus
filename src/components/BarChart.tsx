@@ -83,8 +83,6 @@ const BarChart = ({
     aportacionesTotales,
   ]);
 
-  console.log(interesCompuestoAcomulado);
-  //console.log(interesSimpleAcomulado);
 
   const options = {
     plugins: {},

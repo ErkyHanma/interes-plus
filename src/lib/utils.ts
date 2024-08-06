@@ -55,15 +55,15 @@ export const calcularInteresCompuesto = ({
       throw new Error("Frecuencia de interés no válida");
   }
 
-  const FV_initial = parseFloat(
+  const FV_initial = 
     capitalInicial *
       Math.pow(
         1 + tasaInteresDecimal / numeroCompuestosAnuales,
         numeroCompuestosAnuales * años
-      )
+      
   );
 
-  const FV_contributions = parseFloat(
+  const FV_contributions =
     (AportacionesAdicionales *
       (Math.pow(
         1 + tasaInteresDecimal / numeroCompuestosAnuales,
@@ -71,7 +71,7 @@ export const calcularInteresCompuesto = ({
       ) -
         1)) /
       (tasaInteresDecimal / numeroCompuestosAnuales)
-  );
+  ;
 
   const montoAcumulado = FV_initial + FV_contributions;
 
@@ -131,6 +131,7 @@ export const calcularInteresSimple = ({
   const InteresSimpleTotal = parseFloat(
     capitalInicial * tasaInteresDecimal * años
   );
+
 
   const montoAcumulado =
     InteresSimpleTotal +

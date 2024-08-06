@@ -4,34 +4,39 @@ import "chartjs-adapter-luxon";
 import { valueOrDefault } from "chart.js/helpers";
 
 // Adapted from http://indiegamr.com/generate-repeatable-random-numbers-in-js/
-var _seed = Date.now();
+let _seed = Date.now();
 
-export function srand(seed) {
+export function srand(seed: number): void {
   _seed = seed;
 }
 
-export function rand(min, max) {
-  min = valueOrDefault(min, 0);
-  max = valueOrDefault(max, 0);
+export function rand(min: number = 0, max: number = 0): number {
   _seed = (_seed * 9301 + 49297) % 233280;
   return min + (_seed / 233280) * (max - min);
 }
 
-export function numbers(config) {
-  var cfg = config || {};
-  var min = valueOrDefault(cfg.min, 0);
-  var max = valueOrDefault(cfg.max, 100);
-  var from = valueOrDefault(cfg.from, []);
-  var count = valueOrDefault(cfg.count, 8);
-  var decimals = valueOrDefault(cfg.decimals, 8);
-  var continuity = valueOrDefault(cfg.continuity, 1);
-  var dfactor = Math.pow(10, decimals) || 0;
-  var data = [];
-  var i, value;
+interface NumbersConfig {
+  min?: number;
+  max?: number;
+  from?: number[];
+  count?: number;
+  decimals?: number;
+  continuity?: number;
+}
 
-  for (i = 0; i < count; ++i) {
-    value = (from[i] || 0) + this.rand(min, max);
-    if (this.rand() <= continuity) {
+export function numbers(config: NumbersConfig = {}): (number | null)[] {
+  const min = valueOrDefault(config.min, 0);
+  const max = valueOrDefault(config.max, 100);
+  const from = valueOrDefault(config.from, []);
+  const count = valueOrDefault(config.count, 8);
+  const decimals = valueOrDefault(config.decimals, 8);
+  const continuity = valueOrDefault(config.continuity, 1);
+  const dfactor = Math.pow(10, decimals) || 0;
+  const data: (number | null)[] = [];
+
+  for (let i = 0; i < count; ++i) {
+    let value = (from[i] || 0) + rand(min, max);
+    if (rand() <= continuity) {
       data.push(Math.round(dfactor * value) / dfactor);
     } else {
       data.push(null);
@@ -41,32 +46,50 @@ export function numbers(config) {
   return data;
 }
 
-export function points(config) {
-  const xs = this.numbers(config);
-  const ys = this.numbers(config);
+interface PointsConfig extends NumbersConfig {}
+
+export interface Point {
+  x: number;
+  y: number;
+}
+
+export function points(config: PointsConfig = {}): Point[] {
+  const xs = numbers(config).filter((x): x is number => x !== null);
+  const ys = numbers(config).filter((y): y is number => y !== null);
   return xs.map((x, i) => ({ x, y: ys[i] }));
 }
 
-export function bubbles(config) {
-  return this.points(config).map((pt) => {
-    pt.r = this.rand(config.rmin, config.rmax);
-    return pt;
-  });
+interface BubblesConfig extends PointsConfig {
+  rmin: number;
+  rmax: number;
 }
 
-export function labels(config) {
-  var cfg = config || {};
-  var min = cfg.min || 0;
-  var max = cfg.max || 100;
-  var count = cfg.count || 8;
-  var step = (max - min) / count;
-  var decimals = cfg.decimals || 8;
-  var dfactor = Math.pow(10, decimals) || 0;
-  var prefix = cfg.prefix || "";
-  var values = [];
-  var i;
+export function bubbles(config: BubblesConfig): (Point & { r: number })[] {
+  return points(config).map((pt) => ({
+    ...pt,
+    r: rand(config.rmin, config.rmax),
+  }));
+}
 
-  for (i = min; i < max; i += step) {
+interface LabelsConfig {
+  min?: number;
+  max?: number;
+  count?: number;
+  decimals?: number;
+  prefix?: string;
+}
+
+export function labels(config: LabelsConfig = {}): string[] {
+  const min = config.min || 0;
+  const max = config.max || 100;
+  const count = config.count || 8;
+  const step = (max - min) / count;
+  const decimals = config.decimals || 8;
+  const dfactor = Math.pow(10, decimals) || 0;
+  const prefix = config.prefix || "";
+  const values: string[] = [];
+
+  for (let i = min; i < max; i += step) {
     values.push(prefix + Math.round(dfactor * i) / dfactor);
   }
 
@@ -88,31 +111,35 @@ const MONTHS = [
   "December",
 ];
 
-export function months(config) {
-  var cfg = config || {};
-  var count = cfg.count || 12;
-  var section = cfg.section;
-  var values = [];
-  var i, value;
+interface MonthsConfig {
+  count?: number;
+  section?: number;
+}
 
-  for (i = 0; i < count; ++i) {
-    value = MONTHS[Math.ceil(i) % 12];
-    values.push(value.substring(0, section));
+export function months(config: MonthsConfig = {}): string[] {
+  const count = config.count || 12;
+  const section = config.section;
+  const values: string[] = [];
+
+  for (let i = 0; i < count; ++i) {
+    const value = MONTHS[Math.ceil(i) % 12];
+    values.push(section ? value.substring(0, section) : value);
   }
 
   return values;
 }
 
-export function years(config) {
-  var cfg = config || {};
-  var count = cfg.count || 10; // Default to 10 years
-  var initialYear = 1;
-  var values = [];
+interface YearsConfig {
+  count?: number;
+}
+
+export function years(config: YearsConfig = {}): string[] {
+  const count = config.count || 10; // Default to 10 years
+  const initialYear = 1;
+  const values: string[] = [];
 
   for (let i = 0; i < count; ++i) {
-    values.push(
-      (initialYear + i + (i > 0 ? " años" : " año")).toString()
-    );
+    values.push((initialYear + i + (i > 0 ? " años" : " año")).toString());
   }
 
   return values;
@@ -130,12 +157,12 @@ const COLORS = [
   "#8549ba",
 ];
 
-export function color(index) {
+export function color(index: number): string {
   return COLORS[index % COLORS.length];
 }
 
-export function transparentize(value, opacity) {
-  var alpha = opacity === undefined ? 0.5 : 1 - opacity;
+export function transparentize(value: string, opacity?: number): string {
+  const alpha = opacity === undefined ? 0.5 : 1 - opacity;
   return colorLib(value).alpha(alpha).rgbString();
 }
 
@@ -159,18 +186,18 @@ const NAMED_COLORS = [
   CHART_COLORS.grey,
 ];
 
-export function namedColor(index) {
+export function namedColor(index: number): string {
   return NAMED_COLORS[index % NAMED_COLORS.length];
 }
 
-export function newDate(days) {
+export function newDate(days: number): Date {
   return DateTime.now().plus({ days }).toJSDate();
 }
 
-export function newDateString(days) {
+export function newDateString(days: number): string {
   return DateTime.now().plus({ days }).toISO();
 }
 
-export function parseISODate(str) {
+export function parseISODate(str: string): DateTime {
   return DateTime.fromISO(str);
 }
