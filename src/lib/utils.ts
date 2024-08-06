@@ -128,15 +128,13 @@ export const calcularInteresSimple = ({
       throw new Error("Frecuencia de interés no válida");
   }
 
-  const InteresSimpleTotal = parseFloat(
-    capitalInicial * tasaInteresDecimal * años
-  );
+  const InteresSimpleTotal =  capitalInicial * tasaInteresDecimal * años;
 
 
   const montoAcumulado =
     InteresSimpleTotal +
-    parseFloat(capitalInicial) +
-    parseFloat(AportacionesAdicionales === "" ? 0.0 : AportacionesAdicionales);
+    parseFloat(capitalInicial.toString()) +
+    parseFloat(AportacionesAdicionales.toString() === "" ? '0.0' : AportacionesAdicionales.toString());
 
   return montoAcumulado;
 };
