@@ -11,8 +11,6 @@ import clsx from "clsx";
 const Footer = () => {
   const pathname = usePathname();
 
-  console.log(pathname)
-
   return (
     <footer className="bg2  h-[480px]  flex flex-col w-full ">
       <div
@@ -20,8 +18,7 @@ const Footer = () => {
           "flex flex-col md:flex-row h-[260px] ml-5 mr-7 px-4 pt-16 gap-32 ",
           {
             "border-t  border-gray-400": pathname === "/home",
-          },
-  
+          }
         )}
       >
         <div className="flex w-full md:w-80 mr-28 flex-col  gap-5">

@@ -30,7 +30,7 @@ const about = () => {
         </div>
         <div className="md:ml-20 my-10 justify-center md:w-full flex">
           <Image
-            src={"/images/undraw_data_re_80ws (1).svg"}
+            src={"/icon/undraw_data_re_80ws (1).svg"}
             alt="icon"
             width="0"
             height="0"
@@ -91,7 +91,7 @@ const about = () => {
       <section className="h-full py-24 items-center justify-center px-8 md:px-16 lg:px-20 flex flex-col md:flex-row w-full ">
         <div className=" flex-1 hidden lg:flex mr-8">
           <Image
-            src={"/images/undraw_my_personal_files_re_3q0p.svg"}
+            src={"/icon/undraw_my_personal_files_re_3q0p.svg"}
             alt="icon"
             width="0"
             height="0"

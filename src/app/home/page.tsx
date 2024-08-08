@@ -36,7 +36,7 @@ export default function Home() {
         className={`font-semibold pl-16 ${montserrat.className} h-[60vh] md:h-[70vh] -mt-72 md:-mt-24 mb-16 flex items-center justify-center`}
       >
         <Image
-          src={"/images/undraw_small_town_re_7mcn.svg"}
+          src={"/icon/undraw_small_town_re_7mcn.svg"}
           alt="icon"
           width="0"
           height="0"
