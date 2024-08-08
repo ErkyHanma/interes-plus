@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="w-screen   h-[75vh]">
+    <main className="w-screen  h-[75vh]">
       <section className="h-full fade-in-text  w-full flex justify-center pt-20 px-4">
         <div className="flex flex-col items-center text-center md:w-[800px]">
           <p
@@ -33,18 +33,22 @@ export default function Home() {
       </section>
 
       <section
-        className={` font-semibold pl-16   ${montserrat.className} h-[60vh] md:h-[70vh]  -mt-72 md:-mt-24 mb-16 flex items-center justify-center`}
+        className={`font-semibold pl-16 ${montserrat.className} h-[60vh] md:h-[70vh] -mt-72 md:-mt-24 mb-16 flex items-center justify-center`}
       >
         <Image
           src={"/images/undraw_small_town_re_7mcn.svg"}
           alt="icon"
-          width={1100}
-          height={20}
+          width="0"
+          height="0"
+          sizes="100vw"
+          className="w-[1100px] h-auto"
         />
       </section>
 
-      <section className="gap-20 min-h-[520px] flex flex-col items-center py-8 px-24">
-        <p className={`font-semibold text-center w-[400px]  md:w-full text-2xl md:text-3xl ${karla.className}`}>
+      <section className="gap-20 min-h-[520px] flex flex-col items-center py-8 px-5 md:px-24">
+        <p
+          className={`font-semibold text-center  w-full text-3xl md:text-4xl ${karla.className}`}
+        >
           Estamos aqui para facilitarte tu investigacion
         </p>
         <div className="flex ">
@@ -62,8 +66,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg flex items-center px-8 mt-12 pt-16 h-[600px] justify-center w-full">
-        <div className="flex flex-col items-center text-center md:w-[950px]">
+      <section className="bg flex items-center px-8 mt-12 h-full justify-center w-full">
+        <div className="flex flex-col items-center text-center py-20 md:w-[950px]">
           <p
             className={`text-4xl md:text-5xl xl:text-6xl duration-300  ${montserrat.className} font-bold`}
           >

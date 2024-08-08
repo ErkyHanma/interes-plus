@@ -5,11 +5,12 @@ const LogoBlack = () => {
   return (
     <div className="flex items-baseline gap-1">
       <Image
-        className="black-svg"
         src={"/icon/signal-alt-2.svg"}
         alt="icon"
-        width={32}
-        height={20}
+        width="0"
+        height="0"
+        sizes="100vw"
+        className="w-[32px] h-auto black-svg"
       />
       <span
         className={`${rubik.className} text-[#000000] text-2xl font-semibold

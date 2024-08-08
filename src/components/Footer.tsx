@@ -11,18 +11,17 @@ import clsx from "clsx";
 const Footer = () => {
   const pathname = usePathname();
 
+  console.log(pathname)
+
   return (
     <footer className="bg2  h-[480px]  flex flex-col w-full ">
       <div
         className={clsx(
           "flex flex-col md:flex-row h-[260px] ml-5 mr-7 px-4 pt-16 gap-32 ",
           {
-            "border-t  border-gray-400": pathname !== "/about" || "/info",
+            "border-t  border-gray-400": pathname === "/home",
           },
-          {
-            "border-none": pathname === "/info",
-          },
-          
+  
         )}
       >
         <div className="flex w-full md:w-80 mr-28 flex-col  gap-5">
@@ -62,25 +61,49 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col gap-3">
-            <Image src={"/icon/github.svg"} alt="icon" width={24} height={20} />
-            <Image
-              src={"/icon/linkedin.svg"}
-              alt="icon"
-              width={24}
-              height={20}
-            />
-            <Image
-              src={"/icon/instagram.svg"}
-              alt="icon"
-              width={24}
-              height={20}
-            />
-            <Image
-              src={"/icon/twitter-alt-square.svg"}
-              alt="icon"
-              width={24}
-              height={20}
-            />
+            <Link href={"https://github.com/ErkyHanma"}>
+              <Image
+                src={"/icon/github.svg"}
+                alt="icon"
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="w-[24px] h-auto "
+              />
+            </Link>
+
+            <Link href={""}>
+              <Image
+                src={"/icon/linkedin.svg"}
+                alt="icon"
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="w-[24px] h-auto "
+              />
+            </Link>
+
+            <Link href={""}>
+              <Image
+                src={"/icon/instagram.svg"}
+                alt="icon"
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="w-[24px] h-auto "
+              />
+            </Link>
+
+            <Link href={""}>
+              <Image
+                src={"/icon/twitter-alt-square.svg"}
+                alt="icon"
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="w-[24px] h-auto "
+              />
+            </Link>
           </div>
         </div>
       </div>

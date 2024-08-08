@@ -41,7 +41,14 @@ const CompoundInterestForm: React.FC<FormFieldProps> = ({
             <ToolTip description={item.descripcion} />
           </div>
           <div className="outlined-div border-[1px] flex gap-2 rounded-md py-2 px-2">
-            <Image src={item.icon} width={18} height={30} alt="Tip Icon" />
+            <Image
+              src={item.icon}
+              width="0"
+              height="0"
+              sizes="100vw"
+              className="w-[18px] h-auto "
+              alt="Tip Icon"
+            />
             {item.isInput ? (
               <input
                 value={formData[item.name] as number}

@@ -9,11 +9,12 @@ const Info = () => {
       className={`w-full -mt-24  flex flex-col items-center justify-center  ${montserrat.className}`}
     >
       <Image
-        className="w-full h-[580px] self-center mb-28"
         src={"/fs-banner.jpg"}
-        width={1000}
-        height={1000}
         alt="Info page Image"
+        width="0"
+        height="0"
+        sizes="100vw"
+        className="w-full self-center mb-28 h-auto "
       />
       <div className=" w-full px-12 mb-16 md:w-[80%] lg:w-[55%]">
         <div className="EducacionFinanciera">
@@ -91,8 +92,10 @@ const Info = () => {
 
         <div className="imagen_interes">
           <Image
-            width={400}
-            height={100}
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-[400px] self-center mb-28 h-auto "
             alt=""
             src="/undraw_growth_chart_r99m.svg"
           />
@@ -134,9 +137,10 @@ const Info = () => {
 
         <div className="imagensimple">
           <Image
-            className="py-6 w-[500px]"
-            width={400}
-            height={400}
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-[500px] py-6 h-auto "
             src="/Screenshot 2024-07-30 223738.png"
             alt="imagen interes simple"
           />
@@ -180,11 +184,20 @@ const Info = () => {
             interés simple del 4% anual durante 3 años.
           </p>
 
-          <p>
-            <li>Capital (c): $1,000</li>
-            <li>Tasa de Interés (i): 4% o 0.04</li>
-            <li>Tiempo en Años (t): 3 años</li>
-          </p>
+          <ul className="flex text-lg mb-6 text-[#555] flex-col gap-4 list-disc pl-6">
+            <li>
+              <strong>Capital (c)</strong>: $1,000
+            </li>
+            <li>
+              {" "}
+              <strong>Tasa de Interés (i)</strong>: 4% o 0.04
+            </li>
+            <li>
+              {" "}
+              <strong>Tiempo en Años (t)</strong>: 3 años
+            </li>
+          </ul>
+
           <p>
             <strong>Usamos la fórmula para calcular el interés:</strong>
           </p>
@@ -239,8 +252,10 @@ const Info = () => {
 
         <div className="imagencompuesta">
           <Image
-            width={400}
-            height={400}
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-[400px] h-auto "
             src="/Images/formula-interes-compuesto.png"
             alt="imagen interes compuesto"
           />
@@ -299,44 +314,43 @@ const Info = () => {
             tomar en cuenta.
           </p>
 
-          <div className="subdiferencia">
-            <p>
-              <strong>
-                <h2>Interés simple</h2>
-              </strong>
-              <li>
-                Al iniciar un nuevo período de inversión o crédito este interés
-                se mantiene igual.
-              </li>
-              <li>
-                Se calcula y se paga sobre el capital inicial de la inversión.
-              </li>
-              <li>
-                Una inversión con interés simple significa que las ganancias
-                generadas no son consideradas para ser reinvertidas en el
-                capital.
-              </li>
-            </p>
+          <div className="flex flex-col gap-16">
+            <div>
+              <h2 className="text-2xl mb-4 font-semibold">Interés simple</h2>
+              <ul className="flex text-xl text-[#555] flex-col gap-4 list-disc pl-6">
+                <li>
+                  Al iniciar un nuevo período de inversión o crédito este
+                  interés se mantiene igual.
+                </li>
+                <li>
+                  Se calcula y se paga sobre el capital inicial de la inversión.
+                </li>
+                <li>
+                  Una inversión con interés simple significa que las ganancias
+                  generadas no son consideradas para ser reinvertidas en el
+                  capital.
+                </li>
+              </ul>
+            </div>
 
-            <p>
-              <strong>
-                {" "}
-                <h2>Interés compuesto</h2>
-              </strong>
-              <li>
-                Genera sobre el capital al cumplirse el plazo establecido en la
-                inversión o préstamo.
-              </li>
-              <li>
-                En caso de una inversión, las ganancias generadas se suman al
-                capital. Esto significa que al ser reinvertido se toma en cuenta
-                el total del capital más los intereses generados.
-              </li>
-              <li>
-                Con cada nuevo período de inversión se espera que el interés
-                compuesto aumente.
-              </li>
-            </p>
+            <div>
+              <h2 className="text-2xl mb-4 font-semibold">Interés compuesto</h2>
+              <ul className="flex text-xl text-[#555] flex-col gap-4 list-disc pl-6">
+                <li>
+                  Genera sobre el capital al cumplirse el plazo establecido en
+                  la inversión o préstamo.
+                </li>
+                <li>
+                  En caso de una inversión, las ganancias generadas se suman al
+                  capital. Esto significa que al ser reinvertido se toma en
+                  cuenta el total del capital más los intereses generados.
+                </li>
+                <li>
+                  Con cada nuevo período de inversión se espera que el interés
+                  compuesto aumente.
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div className="mejor">

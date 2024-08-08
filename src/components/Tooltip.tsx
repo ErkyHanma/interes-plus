@@ -11,7 +11,14 @@ const ToolTip = ({ description }: { description: string }) => {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Image src="icon/info.svg" width={12} height={30} alt="Tip Icon" />
+          <Image
+            src="icon/info.svg"
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-[12px] h-auto black-svg"
+            alt="Tip Icon"
+          />
         </TooltipTrigger>
         <TooltipContent className="w-[280px]">
           <p>{description}</p>

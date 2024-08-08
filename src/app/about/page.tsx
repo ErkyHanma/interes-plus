@@ -7,12 +7,12 @@ import Link from "next/link";
 
 const about = () => {
   return (
-    <div className="flex  flex-col">
+    <div className="flex text-black flex-col">
       <section
-        className={`${montserrat.className} flex  gap-3 px-36 justify-center h-[90vh] items-center`}
+        className={`${montserrat.className} flex flex-col md:flex-row  gap-3 px-8 md:px-12 xl:px-36 justify-center h-[90vh] md:items-center`}
       >
-        <div className="flex flex-col flex-1 gap-6">
-          <p className="font-bold text-5xl w-[32rem]">
+        <div className="flex flex-col w-full gap-6">
+          <p className="font-bold text-3xl md:text-4xl lg:text-5xl w-full">
             Cambiando la forma en la que visualizas tus inversiones
           </p>
           <div
@@ -20,7 +20,7 @@ const about = () => {
           >
             ........... .....
           </div>
-          <p className="text-md -mt-4  w-[28rem] font-medium">
+          <p className="text-md -mt-4  w-full font-medium">
             Fundada con la idea de crear una herramienta sencilla para la
             visualización y cálculo de inversiones, Interes-Plus ofrece
             tecnología que reduce errores humanos y proporciona resultados
@@ -28,22 +28,24 @@ const about = () => {
             comprender mejor las inversiones a lo largo del tiempo.
           </p>
         </div>
-        <div className="flex-1 ml-20">
+        <div className="md:ml-20 my-10 justify-center md:w-full flex">
           <Image
             src={"/images/undraw_data_re_80ws (1).svg"}
             alt="icon"
-            width={500}
-            height={20}
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="md:w-full w-[340px]  h-auto"
           />
         </div>
       </section>
 
       <section
-        className={` ${montserrat.className} pb-24  bg-gray-200 min-h-[35rem] pt-20 gap-24  px-36  
+        className={` ${montserrat.className} pb-24  bg-gray-200 min-h-[35rem] pt-20 gap-12 md:gap-24 px-8  md:px-20 lg:px-36  
       >  flex flex-col`}
       >
-        <div className="h-80 flex-1 border-b pb-20 border-gray-500 justify-between gap-20 flex">
-          <p className="text-4xl flex-1  font-bold">
+        <div className="h-80 flex-1 border-b pb-20 border-gray-500 justify-between gap-12 md:gap-20 flex flex-col md:flex-row">
+          <p className="text-4xl flex-1 text-center md:text-start font-bold">
             Diseñado con pasión <br></br>
             para tus finanzas
           </p>
@@ -67,33 +69,39 @@ const about = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="md:grid md:grid-cols-3 flex flex-col gap-6">
           {aboutInfo.map((item) => (
             <div key={item.title} className="gap-3 flex flex-col">
-              <h1 className={`  ${karla.className}   font-semibold text-3xl`}>
+              <p
+                className={`  ${karla.className}   font-semibold text-2xl lg:text-3xl`}
+              >
                 {item.title}
-              </h1>
+              </p>
 
               <span className="w-16 ml-2 h-[2px] -mt-1 bg-orange-500"></span>
 
-              <p className="text-gray-600 text-md font-medium">{item.info}</p>
+              <p className="text-gray-600 text-sm lg:text-base font-medium">
+                {item.info}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="h-full py-24 items-center justify-center px-28 flex w-full ">
-        <div className="flex flex-1 mr-">
+      <section className="h-full py-24 items-center justify-center px-8 md:px-16 lg:px-20 flex flex-col md:flex-row w-full ">
+        <div className=" flex-1 hidden lg:flex mr-8">
           <Image
             src={"/images/undraw_my_personal_files_re_3q0p.svg"}
             alt="icon"
-            width={500}
-            height={20}
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-[500px] h-auto"
           />
         </div>
         <div className={`${montserrat.className} flex flex-col flex-1 gap-8`}>
           <p className="font-bold  text-4xl">Nuestra Historia</p>
-          <p className="gap-2 flex flex-col">
+          <p className="md:gap-2 gap-4 text-sm lg:text-base flex flex-col">
             <span>
               Este proyecto fue creado como parte de un proyecto universitario
               en la materia de Precálculo, encargado por el Lcdo. Luis David
@@ -126,10 +134,10 @@ const about = () => {
         </div>
       </section>
 
-      <section className="w-full my-36 flex items-center justify-center">
+      <section className="w-full px-8 my-24 md:my-36 flex items-center justify-center">
         <div className="flex flex-col items-center text-center md:w-[950px] ">
           <p
-            className={`text-6xl md:text-4xl  ${montserrat.className} font-bold`}
+            className={`text-3xl lg:text-6xl md:text-4xl  ${montserrat.className} font-bold`}
           >
             Creado por entusiastas de la tecnología, no lo dudes y únete a
             nosotros.

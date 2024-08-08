@@ -30,13 +30,15 @@ const Calculadora = () => {
     });
   };
 
-  const handleInterestTypeChange = (event: ReactMouseEvent<HTMLButtonElement>) => {
+  const handleInterestTypeChange = (
+    event: ReactMouseEvent<HTMLButtonElement>
+  ) => {
     const { value } = event.currentTarget;
     setInterestType(value);
   };
 
   return (
-    <div className="flex-col h-full -mt-12 md:-mt-0">
+    <div className="flex-col h-full  -mt-12 md:-mt-0">
       <div
         className={`${montserrat.className} flex justify-center font-bold text-3xl md:text-4xl mt-16`}
       >
@@ -76,7 +78,7 @@ const Calculadora = () => {
             </form>
           </div>
 
-          <div className="w-full">
+          <div className="w-full mb-32">
             <BarChart data={formData} interestType={interestType} />
           </div>
         </div>

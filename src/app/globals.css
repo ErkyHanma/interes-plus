@@ -143,20 +143,9 @@
   filter: invert(100%) brightness(0);
 }
 
-/* headerResponse means the limit when the menu burger apper and disapper*/
-
-@media (min-width: 800px) {
-  .headerResponse\:flex {
-      display: flex;
-  }
+.bgTransparent{
+  background-color: rgba(0, 0, 0, 0.483);
 }
-
-@media (max-width: 800px) {
-  .headerRespons\:flex {
-      display: flex;
-  }
-}
-
 
 /* Info Page Styles */
 
@@ -216,7 +205,6 @@
   font-size: 20px;
   margin-bottom: 40px;
 }
-
 
 .imagen_interes {
   margin-top: 50px;
@@ -330,15 +318,15 @@
 }
 
 .diferencias p {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
   color: #555;
   text-align: justify;
   font-size: 20px;
 }
 
-.subdiferencia h2,
-li {
-  margin-bottom: 20px;
+.subdiferencia ul {
+  list-style-type: disc; /* Asegura que los bullets se muestren */
+  padding-left: 20px;
 }
 
 .mejor h2 {
@@ -357,4 +345,3 @@ li {
   text-align: justify;
   font-size: 19px;
 }
-

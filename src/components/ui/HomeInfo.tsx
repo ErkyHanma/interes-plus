@@ -17,17 +17,20 @@ const HomeInfo = ({
   return (
     <Link
       href={link}
-      className={`flex-col py-4 px-2  ${karla.className} max-w-[330px]`}
+      className={`flex-col flex md:items-start md:justify-normal items-center justify-center  py-4  ${karla.className} max-w-[330px]`}
     >
       <Image
-        className="mb-10 ml-1"
-        width={48}
-        height={30}
         src={icon}
         alt="Icon"
+        width="0"
+        height="0"
+        sizes="100vw"
+        className="w-[48px] h-auto mb-10 ml-1"
       />
-      <h1 className="text-[24px] font-bold mb-3">{title}.</h1>
-      <p className="mb-3">{info}</p>
+      <h1 className="text-[24px] font-bold text-center md:text-start mb-3">
+        {title}.
+      </h1>
+      <p className="mb-3 text-center text-lg md:text-base md:text-start">{info}</p>
 
       <span className="underline hover:text-blue-700 font-semibold">
         Learn More

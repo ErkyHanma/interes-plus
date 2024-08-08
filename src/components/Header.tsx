@@ -8,18 +8,18 @@ import { useModal } from "@/hooks/useModal";
 import { rubik } from "../lib/fonts";
 
 const Header = () => {
-  const { isOpen } = useModal();
+  const { isOpen, onClose } = useModal();
 
   return (
     <>
       <div className="flex shadowHeader bg-white  z-50 fixed w-full top-0 py-3.5 px-6 items-center justify-between border-gray-200 border-b-2  md:border-none">
-        <Link href={"/home"} className="flex items-center ">
+        <Link onClick={onClose} href={"/home"} className="flex items-center ">
           <Logo />
         </Link>
         <div className="flex flex-col items-baseline gap-1">
           <Menu />
 
-          <div className="gap-2 hidden headerResponse:flex">
+          <div className="gap-0.5 lg:gap-2 hidden md:flex">
             {headers_links.map((item) => (
               <Link
                 key={item.name}
@@ -43,17 +43,21 @@ const Header = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden flex-col py-5 mt-6 px-6 gap-3 flex">
-          {headers_links.map((item) => (
-            <Link
-              href={item.href}
-              className={`${rubik.className}  text-md font-semibold cursor-pointer hover:bg-gray-200  p-2 rounded-md`}
-              key={item.name}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
+        <>
+          <div className="md:hidden animate-in translate-y-5 z-50  duration-700 flex-col  fixed w-full  mt-[50px]  py-8 bg-white px-6 gap-3 flex">
+            {headers_links.map((item) => (
+              <Link
+                onClick={onClose}
+                href={item.href}
+                className={`${rubik.className}  text-md font-semibold cursor-pointer hover:bg-gray-200  p-2 rounded-md`}
+                key={item.name}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <div className="md:hidden fixed w-full h-full bgTransparent  z-20 "></div>
+        </>
       )}
     </>
   );

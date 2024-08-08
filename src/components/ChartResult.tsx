@@ -30,11 +30,12 @@ const ChartResult = ({
         <div className="flex-col px-2 gap-3 mt-3 flex items-center">
           <p className="font-bold text-lg text-center">Deposito Inicial</p>
           <Image
-            className=""
             src="icon/wallet.svg"
-            width={60}
-            height={30}
             alt="Tip Icon"
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-[60px] h-auto "
           />
         </div>
 
@@ -49,11 +50,12 @@ const ChartResult = ({
             Depósitos Adicionales Acumulados
           </p>
           <Image
-            className=""
             src="icon/coins.svg"
-            width={60}
-            height={30}
             alt="Tip Icon"
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-[60px] h-auto"
           />
         </div>
 
@@ -66,11 +68,12 @@ const ChartResult = ({
         <div className="flex-col px-2 gap-3 mb-[50px] mt-3 flex items-center">
           <p className="font-bold text-lg text-center">Interés Acumulado</p>
           <Image
-            className=""
             src="icon/chart-histogram.svg"
-            width={60}
-            height={30}
             alt="Tip Icon"
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-[60px] h-auto "
           />
         </div>
 
@@ -83,11 +86,12 @@ const ChartResult = ({
         <div className="flex-col px-2 gap-3 mb-[50px] mt-3 flex items-center">
           <p className="font-bold text-lg text-center">Total</p>
           <Image
-            className=""
             src="icon/sack-dollar.svg"
-            width={60}
-            height={30}
             alt="Tip Icon"
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-[60px] h-auto "
           />
         </div>
 

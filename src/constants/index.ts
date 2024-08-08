@@ -125,3 +125,4 @@ export const aboutInfo = [
     info: "  Creemos en la importancia de la educación financiera para alcanzar la libertad económica. Nos guiamos por valores como la integridad, la transparencia, y la accesibilidad, y nos esforzamos por hacer que la gestión financiera sea comprensible y accesible para todos.",
   },
 ];
+
