@@ -37,7 +37,7 @@ const Contact = () => {
   const [result, setResult] = useState("");
 
   const { submit: onSubmit } = useWeb3Forms({
-    access_key: process.env.KEY,
+    access_key: process.env.KEY || '',
     settings: {
       from_name: "Interes-Plus Inc",
       subject: "New Contact Message from your Website",
@@ -51,6 +51,7 @@ const Contact = () => {
       setResult(msg);
     },
   });
+  
 
   return (
     <div className="w-full -mt-8 flex flex-col">
