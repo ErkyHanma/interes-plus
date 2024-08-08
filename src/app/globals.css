@@ -301,7 +301,7 @@
 }
 
 .variablescompuesta p {
-  margin-bottom: 40px;
+
   color: #555;
   text-align: justify;
   font-size: 19px;
@@ -344,4 +344,17 @@
   color: #555;
   text-align: justify;
   font-size: 19px;
+}
+
+
+
+
+.ol strong{
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+}
+
+
+.ol p{
+  margin-top: 20px;
 }

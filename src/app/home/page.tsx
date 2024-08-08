@@ -33,7 +33,7 @@ export default function Home() {
       </section>
 
       <section
-        className={`font-semibold pl-16 ${montserrat.className} h-[60vh] md:h-[70vh] -mt-72 md:-mt-24 mb-16 flex items-center justify-center`}
+        className={`font-semibold px-8 lg:pl-16 ${montserrat.className} h-[60vh] md:h-[70vh] -mt-72 md:-mt-24 mb-16 flex items-center justify-center`}
       >
         <Image
           src={"/icon/undraw_small_town_re_7mcn.svg"}

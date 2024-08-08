@@ -9,7 +9,7 @@ import clsx from "clsx";
 
 const Calculadora = () => {
   const [formData, setFormData] = useState({
-    DepósitoInicial: 10000,
+    DepósitoInicial: 0,
     TasaDeInterésAnual: 5,
     AñosAInvertir: 5,
     FrecuenciaAnualDeInterés: "anualmente",
@@ -40,7 +40,7 @@ const Calculadora = () => {
   return (
     <div className="flex-col h-full  -mt-12 md:-mt-0">
       <div
-        className={`${montserrat.className} flex justify-center font-bold text-3xl md:text-4xl mt-16`}
+        className={`${montserrat.className} flex justify-center font-bold px-2 text-2xl md:text-3xl lg::text-4xl mt-16`}
       >
         Calculadora de Intereses
       </div>
