@@ -17,7 +17,7 @@ export default function Home() {
             Calcula y visualiza tus inversiones
           </p>
           <p
-            className={` text-gray-500 duration-300 text-base w-[400px] md:text-lg md:w-[440px] xl:w-[600px]  xl:text-xl font-medium mt-6 md:mt-5  ${karla.className}`}
+            className={` text-gray-500 duration-300 text-base  md:text-lg md:w-[440px] xl:w-[600px]  xl:text-xl font-medium mt-6 md:mt-5  ${karla.className}`}
           >
             Tu herramienta definitiva para planificar y visualizar el
             crecimiento de tus inversiones.

@@ -47,7 +47,7 @@ const Calculadora = () => {
 
       <section className="flex md:flex-row flex-col mt-8">
         <div className="flex px-8 xl:px-0 flex-1 flex-col gap-10 xl:flex-row xl:gap-4 xl:mx-20 xl:mt-8">
-          <div className="border py-6 -mt-4 px-4 flex flex-col h-[550px] shadow-md rounded-md">
+          <div className="border pt-3 -mt-4 px-4 flex flex-col h-[550px] shadow-md rounded-md">
             <div className="flex gap-2 justify-between mb-4  rounded-md mx- p-2">
               <button
                 className={clsx("font-semibold  p-2 flex-1  rounded-md", {
@@ -56,7 +56,7 @@ const Calculadora = () => {
                 value={"simple"}
                 onClick={handleInterestTypeChange}
               >
-                Interes SImple
+                Interes Simple
               </button>
               <button
                 className={clsx("font-semibold  p-2 flex-1 rounded-md", {

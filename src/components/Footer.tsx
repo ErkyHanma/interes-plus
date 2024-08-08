@@ -15,7 +15,7 @@ const Footer = () => {
     <footer className="bg2  h-[480px]  flex flex-col w-full ">
       <div
         className={clsx(
-          "flex flex-col md:flex-row h-[260px] ml-5 mr-7 px-4 pt-16 gap-32 ",
+          "flex flex-col md:flex-row h-[260px] ml-5 mr-7 px-2 md:px-4 lg:px-6 pt-16 gap-32 ",
           {
             "border-t  border-gray-400": pathname === "/home",
           }
@@ -30,7 +30,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex gap-8 md:gap-10 xl:gap-28 w-full lg:justify-end">
+        <div className="flex gap-5 md:gap-10 xl:gap-28 w-full lg:justify-end">
           <div className={` flex flex-col ${karla.className} `}>
             <p className={`font-bold mb-6 text-black text-xl `}>Servicios</p>
             <Link className="font-medium text-gray-600" href={"/calculadora"}>
@@ -65,7 +65,7 @@ const Footer = () => {
                 width="0"
                 height="0"
                 sizes="100vw"
-                className="w-[24px] h-auto "
+                className="min-w-[24px] h-auto "
               />
             </Link>
 
@@ -76,7 +76,7 @@ const Footer = () => {
                 width="0"
                 height="0"
                 sizes="100vw"
-                className="w-[24px] h-auto "
+                className="min-w-[24px] h-auto "
               />
             </Link>
 
@@ -87,7 +87,7 @@ const Footer = () => {
                 width="0"
                 height="0"
                 sizes="100vw"
-                className="w-[24px] h-auto "
+                className="min-w-[24px]  h-auto "
               />
             </Link>
 
@@ -98,7 +98,7 @@ const Footer = () => {
                 width="0"
                 height="0"
                 sizes="100vw"
-                className="w-[24px] h-auto "
+                className="min-w-[24px] h-auto "
               />
             </Link>
           </div>

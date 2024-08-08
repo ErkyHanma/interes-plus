@@ -56,7 +56,10 @@ const Header = () => {
               </Link>
             ))}
           </div>
-          <div className="md:hidden fixed w-full h-full bgTransparent  z-20 "></div>
+          <div
+            onClick={onClose}
+            className="md:hidden fixed w-full h-full bgTransparent  z-20 "
+          ></div>
         </>
       )}
     </>
